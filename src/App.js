@@ -3,6 +3,7 @@ import { useRoutes } from "react-router-dom";
 import About from "./about/About";
 import Home from "./home/Home";
 import Restaurant from "./restaurant/Restaurant";
+import RestaurantDetails from "./restaurant/restaurantDetails/RestaurantDetails";
 
 
 const App = () => {
@@ -28,6 +29,12 @@ const App = () => {
     {
       path: "/about",
       element: <About />,
+    },
+
+
+    {
+      path: "/Restaurant/:id",
+      element: <RestaurantDetails />,
     },
 
     // {
