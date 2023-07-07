@@ -1,9 +1,13 @@
 import * as React from "react";
 import { useRoutes } from "react-router-dom";
+import About from "./about/About";
 import Home from "./home/Home";
 import Restaurant from "./restaurant/Restaurant";
 
+
 const App = () => {
+
+  
   const routes = useRoutes([
     {
       path: "*",
@@ -19,6 +23,11 @@ const App = () => {
     {
       path: "/restaurant",
       element: <Restaurant />,
+    },
+
+    {
+      path: "/about",
+      element: <About />,
     },
 
     // {
