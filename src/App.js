@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { useRoutes } from "react-router-dom";
+import Home from "./home/Home";
+import Restaurant from "./restaurant/Restaurant";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+  const routes = useRoutes([
+    {
+      path: "*",
+      element: <Home />,
+     
+    },
+    {
+      path: "/",
+      element: <Home />,
+      errorElement:"Sorry There Is Error"
+    },
+
+    {
+      path: "/restaurant",
+      element: <Restaurant />,
+    },
+
+    // {
+    //   path: 'games',
+    //   element: <Games />,
+    //   children: [
+    //   {
+    //     path: '',
+    //     element: <div>Games Index</div>
+    //   },
+    //   {
+    //     path: ':id',
+    //     element: <div>Game Details</div>
+    //   }]
+    // }
+  ]);
+  return routes;
+};
 
 export default App;
