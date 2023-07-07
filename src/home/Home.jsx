@@ -7,10 +7,10 @@ const Home = () => {
     <>
       <Layout>
         <SearchBar />
-
-        <h1 className="text-3xl font-bold underline">
+        <h1 className="text-xl font-bold underline">
       Hello world!
     </h1>
+    <button>HELLO</button>
       </Layout>
     </>
   );
