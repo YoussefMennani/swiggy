@@ -33,7 +33,7 @@ const App = () => {
 
 
     {
-      path: "/Restaurant/:id",
+      path: "/restaurant/:id",
       element: <RestaurantDetails />,
     },
 
