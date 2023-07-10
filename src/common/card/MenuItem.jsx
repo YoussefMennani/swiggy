@@ -1,13 +1,23 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { CLOUD_IMG } from '../../config'
+import { addItem } from '../../utils/cartSlice';
 
-const MenuItem = ({
-    imageId,
-    name,
-    description,
-    price,
-    ratings,//aggregatedRating
-}) => {
+const MenuItem = (props) => {
+    const {
+        imageId,
+        name,
+        description,
+        price,
+        ratings,//aggregatedRating
+    } = props
+
+    const dispatch = useDispatch();
+
+    const handleAddItem = (item) => {
+        dispatch(addItem(item))
+    }
+
     return (
         //hover:translate-x-1
         <div className='grid grid-cols-3 gap-4 p-2 my-3 border border-gray-300 hover:shadow-lg rounded-md transition delay-150  hover:bg-gray-100'>
@@ -39,7 +49,7 @@ const MenuItem = ({
                 </p>
                 <p className='px-1'>
                     <span className='font-bold'>$ {price} </span>
-                <button className='text-xs float-right  text-white font-medium py-2 px-3 rounded-3xl transition  delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-green-600 duration-300'>+ Add To Cart</button></p>
+                <button className='text-xs float-right  text-white font-medium py-2 px-3 rounded-3xl transition  delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-green-600 duration-300' onClick={()=> handleAddItem(props)}>+ Add To Cart</button></p>
                 
             </div>
         </div>

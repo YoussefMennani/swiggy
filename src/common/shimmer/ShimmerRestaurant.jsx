@@ -8,7 +8,7 @@ const ShimmerRestaurant = () => {
             <div className='flex flex-wrap px-20'>
             {
                 
-                Array.from({ length: 5 }, (key, index) => (
+                Array.from({ length: 11 }, (key, index) => (
                     <ShimmerRestrantCard key={index} />
                 ))
             }

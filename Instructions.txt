@@ -3,3 +3,9 @@ npm install react-router-dom
 npm install -D tailwindcss postcss 
 
 npm install dotenv --save
+
+
+------------ REDUX -----------------
+npm i @reduxjs/toolkit
+
+npm i react-redux

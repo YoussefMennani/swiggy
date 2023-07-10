@@ -1,10 +1,14 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom"
 import Panel from "../panel/Panel";
 
 const NavBar = () => {
 
   const [isVisible, setIsVisible] = useState(false);
+
+  const cartItems = useSelector(store => store.cart.items);
+  console.warn("from navBar  =>  store containe : [ "+cartItems.join(" - ")+" ]")
 
   const handleClick = () => {
     setIsVisible(!isVisible);
@@ -49,7 +53,7 @@ const NavBar = () => {
               </li>
 
               <li>
-                <span onClick={()=>handleClick()} to={"/about"} className="hover:text-sky-300 transition-all block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-yellow-50" >Cart [0]</span>
+                <span onClick={()=>handleClick()} to={"/about"} className="hover:text-sky-300 transition-all block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-yellow-50" >Cart [{cartItems.length}]</span>
               </li>
 
             </ul>
